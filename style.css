@@ -149,6 +149,18 @@ body{
     transform: translateY(-5px);
 }
 
+#education{
+    width: 100%;
+    
+    
+}
+#education div{
+    text-align:left;
+    place-items: center;
+    
+    
+}
+
 /* ================= SKILLS ================= */
 
 .skills-container{
