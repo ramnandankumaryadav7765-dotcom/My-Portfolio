@@ -186,6 +186,13 @@ body{
     gap: 25px;
 }
 
+/*  Reset wrapper link styling to prevent default underlines/color changes across the whole card */
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .project-card{
     background: rgba(255,255,255,0.08);
     padding: 25px;
@@ -193,25 +200,33 @@ body{
     transition: 0.3s;
 }
 
-.project-card:hover{
+/*  Updated hover rule so the card lifts smoothly when hovering anywhere on the card link */
+.project-card-link:hover .project-card{
     transform: translateY(-8px);
 }
+
 
 .project-card h3{
     margin-bottom: 15px;
     color: #38bdf8;
+    text-decoration: none; /* Keeps heading clean */
 }
 
+/*  Changed text color to white and ensured text-decoration is none */
 .project-card p{
+    color: #ffffff;
     margin-bottom: 20px;
     line-height: 1.7;
+    text-decoration: none; 
 }
 
-.project-card a{
+/*  Updated bottom label/button inside the card wrapper */
+.project-card .project-btn{
     text-decoration: none;
     color: #38bdf8;
     font-weight: 600;
 }
+
 
 /* ================= CERTIFICATIONS ================= */
 
