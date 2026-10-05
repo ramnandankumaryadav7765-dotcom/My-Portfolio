@@ -259,26 +259,55 @@ body{
 
 /* ================= SOCIAL LINKS ================= */
 
-.social-links{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
-.social-links a{
+/* Base anchor wrapper to handle whole-card click mechanics */
+.social-link-wrapper {
     text-decoration: none;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.08);
+    color: inherit;
+    display: block;
+}
+
+/* Card components matching the project aesthetic styling */
+.social-card {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 20px;
     transition: 0.3s;
 }
 
-.social-links a:hover{
-    background: #38bdf8;
-    color: black;
+/* Smooth lift transition matching your projects card layout */
+.social-link-wrapper:hover .social-card {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.12); /* Subtle glow variation */
 }
+
+/* Card Header Colors */
+.social-card h3 {
+    margin-bottom: 15px;
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+/* Paragraph styling forced to pure white with underlines dropped */
+.social-card p {
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    text-decoration: none;
+}
+
+/* Optional link element indicators inside the card container */
+.social-card .social-btn {
+    text-decoration: none;
+    color: #38bdf8;
+    font-weight: 600;
+}
+
 
 /* ================= CONTACT ================= */
 
@@ -325,5 +354,63 @@ body{
 
     .hero-buttons{
         justify-content: center;
+    }
+}
+
+/* ================= SPACING REFINEMENTS ================= */
+
+/* Keep the hero at least one screen tall and leave room below its content. */
+.header {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px 8% 72px;
+}
+
+.navbar {
+    margin-bottom: clamp(36px, 6vh, 64px);
+}
+
+/* Use a consistent vertical rhythm for all content sections. */
+.section {
+    padding: clamp(64px, 7vw, 88px) 8%;
+}
+
+/* Give About a distinct start after the full-screen hero. */
+#about {
+    padding-top: clamp(112px, 10vw, 136px);
+}
+
+#about .card p + p {
+    margin-top: 18px;
+}
+
+/* Leave space between the contact card and the page footer. */
+#contact {
+    padding-bottom: clamp(56px, 8vw, 88px);
+}
+
+.footer {
+    margin-top: 0;
+    padding: 24px 8%;
+}
+
+@media (max-width: 900px) {
+    .header {
+        padding: 20px 6% 56px;
+    }
+
+    .section {
+        padding: 64px 6%;
+    }
+
+    #about {
+        padding-top: 88px;
+    }
+
+    #contact {
+        padding-bottom: 56px;
     }
 }
